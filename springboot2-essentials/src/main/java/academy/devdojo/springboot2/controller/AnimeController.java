@@ -1,4 +1,4 @@
-package academy.devdojo.springboot2.Controller;
+package academy.devdojo.springboot2.controller;
 
 
 import academy.devdojo.springboot2.domain.Anime;
@@ -36,7 +36,7 @@ public class AnimeController {
     }
 //    pesquisa por nome
     @GetMapping(path = "/find")
-    public ResponseEntity <List<Anime>> findByName(@RequestParam String name) {
+    public ResponseEntity <List<Anime>> findByName(@RequestParam(required = false) String name) {
         return ResponseEntity.ok(animeService.findByName(name));
     }
 
